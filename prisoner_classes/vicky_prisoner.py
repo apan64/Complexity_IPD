@@ -3,6 +3,7 @@ from base_class import Prisoner
 
 class VickyPrisoner(Prisoner):
     def __init__(self):
+        Prisoner.__init__(self)
         self.history = []
         self.name = 'VickyPrisoner'
 
@@ -25,7 +26,7 @@ class VickyPrisoner(Prisoner):
                 return 'D'
             # if they have reason to be believe we are a defector then we should defect
             elif self.history.count('D') > self.history.count('C'):
-                return 'C'
+                return 'D'
             # otherwise let us cooperate
             else:
                 return 'C'
