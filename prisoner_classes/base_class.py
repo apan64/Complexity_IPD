@@ -26,3 +26,13 @@ class Prisoner:
         decision = self.makeDecision(opponent.getHistory())
         self.addToHistory(decision)
         return decision
+
+class Snail(Prisoner):
+    def __init__(self):
+        self.name = 'Snail'
+
+    def makeDecision(self, history):
+        lag = 5
+        if len(history) > lag:
+            return 'C' if history[-lag] == 'C' else 'D'
+        return 'D'
