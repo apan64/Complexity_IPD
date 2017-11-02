@@ -1,10 +1,10 @@
-# Create a class that extends this one
-# Make sure to use Python 3 syntax since I built the tournament system in 3
-class Prisoner:
+from base_class import Prisoner
+
+
+class VickyPrisoner(Prisoner):
     def __init__(self):
         self.history = []
-        # TODO: Give your class a name for me to refer to it by
-        self.name = 'Default'
+        self.name = 'VickyPrisoner'
 
     def getHistory(self):
         return self.history
@@ -19,8 +19,12 @@ class Prisoner:
 
         Output: The character 'C' or 'D', to represent the agent's choice to either cooperate or defect
         '''
-        # TODO: Overwrite this function yourself!
-        return 'D'
+        # if they have ever defected then we will defect too
+        if 'D' in history:
+            return 'D'
+        # if they have never defected then we will cooperate
+        else:
+            return 'C'
 
     def playDilemma(self, opponent):
         decision = self.makeDecision(opponent.getHistory())
