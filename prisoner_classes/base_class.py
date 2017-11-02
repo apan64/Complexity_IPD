@@ -27,7 +27,7 @@ class Prisoner:
         self.addToHistory(decision)
         return decision
 
-class MyPrisoner(Prisoner):
+class TigerMountainPrisoner(Prisoner):
     def __init__(self):
         Prisoner.__init__(self)
         self.name = 'Wolpertinger'
