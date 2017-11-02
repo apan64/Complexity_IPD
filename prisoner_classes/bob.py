@@ -3,6 +3,7 @@ from base_class import Prisoner
 
 class Bob(Prisoner):
     def __init__(self):
+        Prisoner.__init__(self)
         self.history = []
         self.name = 'BOB'
 
