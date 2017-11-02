@@ -19,9 +19,16 @@ class VickyPrisoner(Prisoner):
 
         Output: The character 'C' or 'D', to represent the agent's choice to either cooperate or defect
         '''
-        # if they have ever defected then we will defect too
+        # if they defect more than they cooperate then we should defect too
         if 'D' in history:
-            return 'D'
+            if history.count('D') > history.count('C')
+                return 'D'
+            # if they have reason to be believe we are a defector then we should defect
+            elif self.history.count('D') > self.history.count('C'):
+                return 'C'
+            # otherwise let us cooperate
+            else:
+                return 'C'
         # if they have never defected then we will cooperate
         else:
             return 'C'
