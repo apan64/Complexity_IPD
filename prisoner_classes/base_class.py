@@ -26,3 +26,25 @@ class Prisoner:
         decision = self.makeDecision(opponent.getHistory())
         self.addToHistory(decision)
         return decision
+
+class MyPrisoner(Prisoner):
+    def __init__(self):
+        Prisoner.__init__(self)
+        self.name = 'Wolpertinger'
+        
+    def makeDecision(self, history):
+        '''
+        Input: List containing the history of the opposing agent's decisions throughout previous games
+        
+        Output: The character 'C' or 'D', to represent the agent's choice to either cooperate or defect
+        '''
+        if (len(history) == 0):
+            return 'C'
+        elif history[-1] is 'C':
+            return 'C'
+        else:
+            cs = history.count('C')
+            ds = history.count('D')
+            if cs > ds*2:
+                return 'C'
+            return 'D'
