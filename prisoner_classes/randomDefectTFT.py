@@ -19,7 +19,7 @@ class Prisoner:
 
         Output: The character 'C' or 'D', to represent the agent's choice to either cooperate or defect
         '''
-        if random.radnom() < 0.01:
+        if random.random() < 0.01:
             return 'D'
         return history[-1]
 
