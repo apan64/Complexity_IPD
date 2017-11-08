@@ -26,7 +26,8 @@ class Prisoner:
         '''
         # TODO: Overwrite this function yourself!
         return 'D'
-
+    
+    # Note: YOU CANNOT USE THIS IN A TOURNAMENT BECAUSE THE DECISION OF THE SECOND PRISONER IS BASED ON THE DECISON OF THE FIRST ONE!
     def playDilemma(self, opponent):
         decision = self.makeDecision(opponent.getHistory())
         self.addToHistory(decision)
@@ -38,6 +39,14 @@ class Defector(Prisoner):
         self.name = 'Defector'
     def makeDecision(self, history):
         return 'D'
+
+class Cooperator(Prisoner):
+    def __init__(self):
+        Prisoner.__init__(self)
+        self.name = 'Cooperator'
+    def makeDecision(self, history):
+        return 'C'
+
 
 class Goldfish(Prisoner):
     def __init__(self):
